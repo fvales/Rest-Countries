@@ -19,7 +19,7 @@ export default function Home({ countryList }) {
           <Search />
           <CountryFilter />
         </div>
-        <div className='p-8 md:p-16 grid sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6'>
+        <div className='px-8 md:px-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-8'>
           {
             countryList?.map((country) => <Card name={country.name?.official || country.name.common} population={country.population} region={country.region} flag={country.flags.png} capital={country.capital || '-'} />)
           }
