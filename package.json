@@ -1,8 +1,10 @@
 {
-  "name": "rest-countries-styled-components",
+  "homepage": "https://fvales.github.io/Rest-Countries/",
+  "name": "rest-countries",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "Freeda Vales",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
