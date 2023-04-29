@@ -2,10 +2,17 @@ import { StyledCard, StyledCardBody, StyledCardTitle } from "./styles/Card.style
 import { Flex } from './styles/Flex.styled'
 import { Image, ImageContainer } from './styles/Image.styled'
 import { Heading2, Heading3 } from './styles/Home.styled'
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ data }) => {
+    const navigate = useNavigate();
+
+    const showDetails = (code) => {
+        navigate(`/details/${code}`);
+    }
+
     return (
-        <Flex as={StyledCard} direction="column">
+        <Flex as={StyledCard} direction="column" onClick={() => showDetails(data.code)}>
             <ImageContainer height="10rem">
                 <Image src={data?.flag} alt={data?.name} width="100%" height="100%" />
             </ImageContainer>

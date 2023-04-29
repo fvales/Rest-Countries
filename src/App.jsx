@@ -5,6 +5,7 @@ import { theme, lightTheme, darkTheme } from "./constants/Theme"
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes";
 import { useState } from "react";
+import { Container } from "./components/styles/Home.styled";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -17,7 +18,9 @@ function App() {
     <ThemeProvider theme={mode === 'light' ? { ...theme, colors: { ...lightTheme } } : { ...theme, colors: { ...darkTheme } }}>
       <GlobalStyle />
       <Header themeToggler={themeToggler} mode={mode} />
-      <RouterProvider router={router} />
+      <Container>
+        <RouterProvider router={router} />
+      </Container>
     </ThemeProvider>
   )
 }

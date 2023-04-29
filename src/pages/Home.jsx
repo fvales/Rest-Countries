@@ -13,6 +13,7 @@ const Home = () => {
         .then((res) => res.json())
         .then((res) => {
           return res.map(country => ({
+            code: country.cca3,
             name: country.name.official,
             population: country.population,
             region: country.region,
@@ -27,13 +28,13 @@ const Home = () => {
   }, [])
 
   return (
-    <Container>
+    <>
       <div>
         {/* Search Functionality  */}
         {/* Filter Functionality  */}
       </div>
       <CountryList data={countryList} />
-    </Container>
+    </>
   )
 }
 
