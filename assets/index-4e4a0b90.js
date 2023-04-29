@@ -245,7 +245,8 @@ Error generating stack: `+l.message+`
     }
 
     h2 {
-        font-weight: ${({theme:e})=>e.fontWeight.fw800}
+        font-weight: ${({theme:e})=>e.fontWeight.fw800};
+        font-size: 1.5rem;
     }
 
     @media only screen and (min-width: ${({theme:e})=>e.size.tablet}) {
@@ -262,5 +263,6 @@ Error generating stack: `+l.message+`
 
     @media only screen and (min-width: ${({theme:e})=>e.size.tablet}) {
         flex-direction: row;
+        gap: 4rem;
     }
 `,Qg=()=>{var o,l,i;const{code:e}=gg(),[t,n]=A.useState("");if(A.useEffect(()=>{e&&(async u=>{const s=await fetch(`https://restcountries.com/v3.1/alpha/${u}`).then(d=>d.json()).catch(d=>console.log(d));n(s[0])})(e)},[e]),!t)return I.jsx("div",{children:"Loading..."});const r=a=>a==null?void 0:a.map(u=>u.name);return I.jsxs(Wg,{children:[I.jsx(kp,{children:I.jsx(qu,{alt:t.flags.alt,src:(o=t==null?void 0:t.flags)==null?void 0:o.svg})}),I.jsxs(Ie,{direction:"column",gap:"2.5rem",children:[I.jsx("h2",{children:(l=t==null?void 0:t.name)==null?void 0:l.official}),I.jsxs(Vg,{children:[I.jsxs(Ie,{direction:"column",gap:"1rem",children:[I.jsxs(Ie,{gap:"4px",children:[I.jsx("h3",{children:"Native Name:"}),(i=t==null?void 0:t.name)==null?void 0:i.common]}),I.jsxs(Ie,{gap:"4px",children:[I.jsx("h3",{children:"Population:"}),t==null?void 0:t.population]}),I.jsxs(Ie,{gap:"4px",children:[I.jsx("h3",{children:"Region:"}),t==null?void 0:t.region]}),I.jsxs(Ie,{gap:"4px",children:[I.jsx("h3",{children:"Sub Region:"}),t==null?void 0:t.subregion]}),I.jsxs(Ie,{gap:"4px",children:[I.jsx("h3",{children:"Capital:"}),t==null?void 0:t.capital.join(", ")]})]}),I.jsxs(Ie,{direction:"column",gap:"1rem",children:[I.jsxs(Ie,{gap:"4px",children:[I.jsx("h3",{children:"Top Level Domain:"}),t==null?void 0:t.tld.join(", ")]}),I.jsxs(Ie,{gap:"4px",children:[I.jsx("h3",{children:"Currencies:"}),r(Object.values(t==null?void 0:t.currencies)).join(", ")]}),I.jsxs(Ie,{gap:"4px",children:[I.jsx("h3",{children:"Languages:"}),Object.values(t==null?void 0:t.languages).join(", ")]})]})]})]})]})},Yg=Mg([{path:"/",element:I.jsx(Hg,{})},{path:"/details/:code",element:I.jsx(Qg,{})}],{basename:"/Rest-Countries/"});function Kg(){const[e,t]=A.useState("light"),n=()=>{t(e==="light"?"dark":"light")};return I.jsxs(av,{theme:e==="light"?{...Pc,colors:{...mv}}:{...Pc,colors:{...vv}},children:[I.jsx(cv,{}),I.jsx(hv,{themeToggler:n,mode:e}),I.jsx(Ig,{children:I.jsx(Rg,{router:Yg})})]})}Gi.createRoot(document.getElementById("root")).render(I.jsx(En.StrictMode,{children:I.jsx(Kg,{})}));
