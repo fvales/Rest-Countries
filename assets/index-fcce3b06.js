@@ -84,6 +84,7 @@ Error generating stack: `+i.message+`
     body {
         font-size: 1rem;
         font-family: ${({theme:e})=>e.font.body}, sans-serif;
+        background-color: ${({theme:e})=>e.colors.bg_color};
         color: ${({theme:e})=>e.colors.text};
         text-rendering: optimizeSpeed;
         line-height: 1.25;
@@ -222,8 +223,7 @@ Error generating stack: `+i.message+`
     font-weight: ${({theme:e})=>e.fontWeight.fw800};
 `,l1=et.main`
     min-width: 100%;
-    min-height: 100%;
-    background-color: ${({theme:e})=>e.colors.bg_color};
+    height: calc(100% - 6rem);
     padding: 2rem;
 
     @media only screen and (min-width: ${({theme:e})=>e.size.tablet}) {
