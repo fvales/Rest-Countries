@@ -229,7 +229,7 @@ Error generating stack: `+i.message+`
         font-weight: ${({theme:e})=>e.fontWeight.fw600};
     }
 `,a1=({data:e})=>{const t=Fh(),n=r=>{t(`/details/${r}`)};return M.jsxs(Kt,{as:o1,direction:"column",onClick:()=>n(e.code),children:[M.jsx(kh,{height:"10rem",children:M.jsx(zs,{src:e==null?void 0:e.flag,alt:e==null?void 0:e.name,width:"100%",height:"100%"})}),M.jsxs(i1,{children:[M.jsx(l1,{title:e==null?void 0:e.name,children:e==null?void 0:e.name}),M.jsxs(Kt,{direction:"column",gap:"4px",children:[M.jsxs(_t,{children:[M.jsx("h3",{children:"Population:"}),M.jsx("span",{children:e==null?void 0:e.population})]}),M.jsxs(_t,{children:[M.jsx("h3",{children:"Region:"}),M.jsx("span",{children:e==null?void 0:e.region})]}),M.jsxs(_t,{children:[M.jsx("h3",{children:"Capital:"}),M.jsx("span",{children:e==null?void 0:e.capital})]})]})]})]})},u1=ot.div`
-    --auto-grid-min-size: 16rem;
+    --auto-grid-min-size: 14rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
     grid-gap: 3rem;
