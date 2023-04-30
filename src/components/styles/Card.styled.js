@@ -8,17 +8,14 @@ export const StyledCard = styled.article`
     background-color: ${({ theme }) => theme.colors.elements};
     border-radius: 0.5rem;
 
+    &:hover {
+        transition: 500ms;
+        transform: scale(105%);
+        transition-timing-function: ease-in-out;
+    }
+
     img {
         object-fit: cover;
-        
-    }
-
-    @media only screen and (min-width: ${({theme}) => theme.size.tablet}) {
-        flex: 1 0 calc(33.33% - 3rem);
-    }
-
-    @media only screen and (min-width: ${({theme}) => theme.size.laptop}) {
-        flex: 1 0 calc(25% - 3rem);
     }
 `
 
@@ -28,4 +25,8 @@ export const StyledCardBody = styled.div`
 
 export const StyledCardTitle = styled.h2`
     font-weight: ${({ theme }) => theme.fontWeight.fw800};
+    margin-bottom: 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 `

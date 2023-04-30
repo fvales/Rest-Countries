@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html,
-    body {
+    body, #root {
         height: 100%;
     }
 
@@ -37,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-size: 1rem;
         font-family: ${({theme}) => theme.font.body}, sans-serif;
+        background-color: ${({theme}) => theme.colors.bg_color};
         color: ${({theme}) => theme.colors.text};
         text-rendering: optimizeSpeed;
         line-height: 1.25;
