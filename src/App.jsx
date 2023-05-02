@@ -20,7 +20,7 @@ function App() {
       <Container>
         <RouterProvider router={router} />
       </Container>
-      {/* <Footer /> */}
+      <Footer />
     </ThemeProvider>
   )
 }

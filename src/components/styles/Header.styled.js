@@ -5,7 +5,11 @@ export const StyledHeader = styled.header`
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
-    position: sticky;
+    position: fixed;
+    top:0; 
+    left:0;
+    width: 100%;
+    z-index: 2;
     background-color: ${({ theme }) => theme.colors.elements};
     color: ${({ theme }) => theme.colors.text};
 

@@ -6,6 +6,7 @@ import { InfoContainer } from "./styles/Info.styled";
 
 const Card = ({ data }) => {
     const navigate = useNavigate();
+    const nf = new Intl.NumberFormat('en-US');
 
     const showDetails = (code) => {
         navigate(`/details/${code}`);
@@ -21,15 +22,15 @@ const Card = ({ data }) => {
                 <Flex direction="column" gap="4px">
                     <InfoContainer>
                         <h3>Population:</h3>
-                        <span>{data?.population}</span>
+                        <span>{nf.format(data?.population) || '-'}</span>
                     </InfoContainer>
                     <InfoContainer>
                         <h3>Region:</h3>
-                        <span>{data?.region}</span>
+                        <span>{data?.region || '-'}</span>
                     </InfoContainer>
                     <InfoContainer>
                         <h3>Capital:</h3>
-                        <span>{data?.capital}</span>
+                        <span>{data?.capital || '-'}</span>
                     </InfoContainer>
                 </Flex>
             </StyledCardBody>

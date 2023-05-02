@@ -35,27 +35,55 @@ const Home = () => {
     fetchCountryList();
   }, [])
 
-  const searchCountry = (search) => {
+  const searchCountry = (list, search) => {
     if (search) {
-      const result = countryListInitial?.filter((country) => country.name.toLowerCase().indexOf(search.toLowerCase()) !== -1);
+      const result = list?.filter((country) => country.name.toLowerCase().indexOf(search.toLowerCase()) !== -1);
+      return result;
+    }
+    return list;
+  }
+
+  const filterCountry = (list, region) => {
+    if (region !== 'All') {
+      const result = list?.filter((country) => country.region === region);
+      return result;
+    }
+    return list;
+  }
+
+  const handleSearch = (search) => {
+    setSearchTerm(search)
+    // Filter not applied then only search
+    if (filterTerm === 'All') {
+      const result = searchCountry(countryListInitial, search)
       setCountryList(result)
     } else {
-      setCountryList(countryListInitial);
+      // Filter is applied
+      if (search) {
+        const result = countryListInitial?.filter((country) => country.name.toLowerCase().indexOf(search.toLowerCase()) !== -1 && country.region === filterTerm);
+        setCountryList(result)
+      } else {
+        const result = filterCountry(countryListInitial, filterTerm)
+        setCountryList(result)
+      }
     }
   }
 
-  const handleSearch = async (search) => {
-    setSearchTerm(search)
-    searchCountry(search)
-  }
-
-  const filterCountry = (value) => {
-    setFilterTerm(value)
-    if (value === 'All')
-      setCountryList(countryListInitial)
-    else {
-      const result = countryListInitial?.filter((country) => country.region === value)
+  const handleFilter = (region) => {
+    setFilterTerm(region);
+    // No search term
+    if (!searchTerm) {
+      const result = filterCountry(countryListInitial, region)
       setCountryList(result)
+    } else {
+      // SearchTerm is present
+      if (region !== 'All') {
+        const result = countryListInitial?.filter((country) => country.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 && country.region === region);
+        setCountryList(result)
+      } else {
+        const result = searchCountry(countryListInitial, searchTerm)
+        setCountryList(result)
+      }
     }
   }
 
@@ -72,11 +100,15 @@ const Home = () => {
         <Dropdown
           label="Filter by region"
           values={REGION}
-          filterList={filterCountry}
+          filterList={handleFilter}
           selectedTerm={filterTerm}
         />
       </CountryFilterSection>
-      <CountryList data={countryList} />
+      {
+        countryListInitial.length && !countryList?.length ?
+          <span>No records found</span> : !countryListInitial?.length ? <span>Loading...</span>
+            : <CountryList data={countryList} />
+      }
     </>
   )
 }

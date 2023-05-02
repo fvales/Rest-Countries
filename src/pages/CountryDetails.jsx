@@ -16,6 +16,7 @@ const CountryDetails = () => {
     const { code } = useParams();
     const [countryDetails, setCountryDetails] = useState('');
     const { mode } = useContext(ModeContext)
+    const nf = new Intl.NumberFormat('en-US');
 
     useEffect(() => {
         const fetchCountryDetails = async (code) => {
@@ -75,7 +76,7 @@ const CountryDetails = () => {
                             </InfoContainer>
                             <InfoContainer>
                                 <h3>Population:</h3>
-                                {countryDetails?.population || '-'}
+                                {nf.format(countryDetails?.population) || '-'}
                             </InfoContainer>
                             <InfoContainer>
                                 <h3>Region:</h3>
