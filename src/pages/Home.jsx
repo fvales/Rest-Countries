@@ -106,7 +106,7 @@ const Home = () => {
       </CountryFilterSection>
       {
         countryListInitial.length && !countryList?.length ?
-          <span>No records found</span> : !countryListInitial?.length ? <span>Loading...</span>
+          <span className="info-message">No records found</span> : !countryListInitial?.length ? <span className="info-message">Loading...</span>
             : <CountryList data={countryList} />
       }
     </>

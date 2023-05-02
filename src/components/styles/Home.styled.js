@@ -38,6 +38,13 @@ export const Container = styled.main`
             color: ${({ theme }) => theme.colors.text};
         }
     }
+
+    .info-message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: ${({theme}) => theme.fontSize.fs500};
+    }
 `
 
 export const CountryFilterSection = styled.div`

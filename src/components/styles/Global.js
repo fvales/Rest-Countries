@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     html,
     body, #root {
         height: 100%;
+        position: relative;
     }
 
     /* Set core body defaults */
