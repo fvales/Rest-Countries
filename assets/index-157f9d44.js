@@ -350,7 +350,6 @@ Error generating stack: `+i.message+`
   cursor: pointer;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 1px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 2px 1px;
-  transition: 0.3s ease;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
