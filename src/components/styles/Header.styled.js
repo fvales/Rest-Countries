@@ -10,13 +10,16 @@ export const StyledHeader = styled.header`
     color: ${({ theme }) => theme.colors.text};
 
     > h1 {
+        font-size: ${({theme}) => theme.fontSize.fs500};
         font-weight: ${({ theme }) => theme.fontWeight.fw800};
     }
 
     @media only screen and (min-width: ${({theme}) => theme.size.tablet}) {
         padding: 1rem 4rem;
     }
-`
-export const Image = styled.img`
-    
+
+    svg {
+        cursor: pointer;
+        fill: ${({ theme }) => theme.colors.text};
+    }
 `

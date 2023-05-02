@@ -19,6 +19,10 @@ export const theme = {
     font: {
       body: 'Nunito Sans'
     },
+    fontSize: {
+      fs500: '1rem',
+      fs400: '0.875rem'
+    },
     fontWeight: {
       fw300: 300,
       fw600: 600,

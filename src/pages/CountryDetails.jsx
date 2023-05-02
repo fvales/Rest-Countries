@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Image, ImageContainer } from "../components/styles/Image.styled";
 import { Flex } from "../components/styles/Flex.styled";
-import { BackButton, CountryDetailsContainer, CountryDetailsSection } from "../components/styles/CountryDetails.styled";
+import { BackButton, CountryDetailsContainer, CountryDetailsSection, CountryDetailsSectionContainer } from "../components/styles/CountryDetails.styled";
 import { ReactSVG } from "react-svg";
 import back_icon from "../assets/left-arrow.svg";
 import { Tooltip } from 'react-tooltip'
@@ -35,7 +35,9 @@ const CountryDetails = () => {
     }
 
     const redirectToCountry = (code) => {
-        navigate(`/details/${code}`);
+        if (code) {
+            navigate(`/details/${code}`);
+        }
     }
 
     const getCurrency = (data) => {
@@ -51,7 +53,7 @@ const CountryDetails = () => {
     }
 
     return (
-        <Flex direction="column" gap="4rem">
+        <Flex direction="column" gap="3rem">
             <BackButton onClick={() => navigate(-1)}>
                 <ReactSVG src={back_icon} />
                 Back
@@ -63,10 +65,10 @@ const CountryDetails = () => {
                     <Image alt={countryDetails.flags.alt} src={countryDetails?.flags?.svg} />
                 </ImageContainer>
 
-                <Flex direction="column" gap="2.5rem">
+                <CountryDetailsSectionContainer>
                     <h2>{countryDetails?.name?.official || '-'}</h2>
                     <CountryDetailsSection>
-                        <Flex direction="column" gap="1rem">
+                        <Flex direction="column" gap="0.5rem">
                             <InfoContainer>
                                 <h3>Native Name:</h3>
                                 {countryDetails?.name?.common || '-'}
@@ -88,7 +90,7 @@ const CountryDetails = () => {
                                 <span>{countryDetails?.capital?.join(', ') || '-'}</span>
                             </InfoContainer>
                         </Flex>
-                        <Flex direction="column" gap="1rem">
+                        <Flex direction="column" gap="0.5rem">
                             <InfoContainer>
                                 <h3>Top Level Domain:</h3>
                                 {
@@ -137,7 +139,7 @@ const CountryDetails = () => {
                             }
                         </Flex>
                     </InfoContainer>
-                </Flex>
+                </CountryDetailsSectionContainer>
             </CountryDetailsContainer >
         </Flex >
     )

@@ -5,4 +5,5 @@ export const CountryListContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
     grid-gap: 3rem;
+    margin: 2rem 0;
 `

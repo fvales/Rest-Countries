@@ -1,16 +1,15 @@
 import { StyledHeader } from "./styles/Header.styled"
 import { Flex } from "./styles/Flex.styled"
-import { Image } from "./styles/Image.styled"
-import moon_light from "../assets/moon-regular.svg"
-import moon_dark from "../assets/moon-solid.svg"
+import moon from "../assets/moon.svg"
+import { ReactSVG } from "react-svg"
 
-const Header = ({ themeToggler, mode }) => {
+const Header = ({ themeToggler }) => {
   return (
 
     <Flex as={StyledHeader} alignItems="center" justifyContent="space-between">
       <h1>Where in the world?</h1>
       <Flex gap="0.5rem" alignItems="center">
-        <Image alt='mode-icon' onClick={themeToggler} src={mode === 'light' ? moon_light : moon_dark} width="2rem" height="2rem" />
+        <ReactSVG src={moon} onClick={themeToggler}/>
         <span>Dark Mode</span>
       </Flex>
     </Flex>

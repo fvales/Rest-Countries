@@ -29,4 +29,5 @@ export const StyledCardTitle = styled.h2`
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    font-size: ${({theme}) => theme.fontSize.fs500};
 `

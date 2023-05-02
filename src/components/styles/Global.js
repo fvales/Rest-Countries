@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1rem;
         font-family: ${({theme}) => theme.font.body}, sans-serif;
         background-color: ${({theme}) => theme.colors.bg_color};
+        font-size: ${({theme}) => theme.fontSize.fs400};
         color: ${({theme}) => theme.colors.text};
         text-rendering: optimizeSpeed;
         line-height: 1.25;

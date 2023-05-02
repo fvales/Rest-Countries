@@ -35,6 +35,16 @@ export const CountryDetailsSection = styled.div`
     }
 `
 
+export const CountryDetailsSectionContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media only screen and (min-width: ${({theme}) => theme.size.tablet}) {
+        align-self: center;
+    }
+`
+
 export const BackButton = styled(Button)`
     align-self: flex-start;
     display: flex;
